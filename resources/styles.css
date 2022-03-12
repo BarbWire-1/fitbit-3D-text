@@ -4,7 +4,7 @@
     fill: "black";
 }
 
-.myText {
+._3DText {
     text-length: 15;
 }
 
@@ -26,6 +26,7 @@
     fill: orange;
     font-family: 'Barlow-Bold';
     font-size: 35; /* haha... gets applied, but logs as -32768 WTF??*/
+   
     
 }
 .myClass #main {

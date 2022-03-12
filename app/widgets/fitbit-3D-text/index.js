@@ -188,13 +188,6 @@ const construct = (el) => {
                 case 'text-anchor':
                     el.textAnchor = attributeValue;
                     break;
-                case 'text-length':
-                    el.textLength = Number(attributeValue);
-                    break;
-                // case 'font-size':
-                //     el.style.fontSize = Number(attributeValue); // directly in use-line
-                //     break;
-
             }
         });
         
@@ -210,7 +203,7 @@ const construct = (el) => {
         shadowEl.x = shadowEl.x ?? 1;
         shadowEl.y = shadowEl.y ?? 1;
 
-        const allSubTextElements = el.getElementsByClassName('myText');
+        const allSubTextElements = el.getElementsByClassName('_3DText');
         allSubTextElements.forEach(sub => {
             sub.style.fontFamily = _style.fontFamily;
             // this is really ugly, but doesn'work without using vars
@@ -239,5 +232,5 @@ const construct = (el) => {
     return el;
 };
 
-constructWidgets('shadowText', construct);
+constructWidgets('fitbit-3D-text', construct);
 

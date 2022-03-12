@@ -1,0 +1,8 @@
+<defs>
+    <symbol id="fitbit-3D-text" x="0" y="0" type="fitbit-3D-text" class="widget-auto _3DText" fill="grey">
+        <text id="shadow" class="_3DText shadow " />
+        <text id="light" class="_3DText light" />
+        <text id="main" class="_3DText main " x="0" y="0" />
+        <text id="config" display="none" text-length="70" />
+    </symbol>
+</defs>

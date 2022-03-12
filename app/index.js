@@ -2,7 +2,7 @@
 import document from "document";
 import { inspectObject, dumpProperties } from "./devTools";
 import { startFactory } from "./widgets/construct-widgets";
-import './widgets/shadow-text';
+import './widgets/fitbit-3D-text';
 
 
 
@@ -14,7 +14,7 @@ let widgetUsesGroup = document.getElementById('widgetUsesGroup')
 let widget = widgetUsesGroup.getElementsByClassName("widget-auto");
 
 let newUse = widgetUsesGroup.getElementById('newUse')
-newUse.shadow.x = newUse.shadow.y = 2;
+//newUse.shadow.x = newUse.shadow.y = 2;
 //newUse.style.fill = 'magenta'
 let newUse2 = widgetUsesGroup.getElementById('newUse2')
 newUse2.text = 'blah'

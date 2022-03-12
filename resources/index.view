@@ -4,16 +4,16 @@
     <g id="widgetUsesGroup" transform="translate(30,0)">
 
 
-        <use id="classEl1" href="#shadowText" x="50" y="60" class="widget-auto myClass"/>
-        <use id="classEl2" href="#shadowText" x="50" y="90" class="widget-auto myClass"/>
-        <use id="widget3" href="#shadowText" x="50" y="120" font-size="20"  >
+        <use id="classEl1" href="#fitbit-3D-text" x="50" y="60" class="widget-auto myClass"/>
+        <use id="classEl2" href="#fitbit-3D-text" x="50" y="90" class="widget-auto myClass"/>
+        <use id="widget3" href="#fitbit-3D-text" x="50" y="120" font-size="20"  >
             <set href="#config" attributeName="text-buffer" to='text: widget 3;letter-spacing:5' />
             <set href="#shadow" attributeName="x" to="3" />
         </use>
 
-        <use id="newUse" href="#shadowText" x="168" y="120" font-family="System-Regular" class="widget-auto"
+        <use id="newUse" href="#fitbit-3D-text" x="168" y="120" font-family="System-Regular" class="widget-auto"
             fill="blue"/>
-        <use id="newUse2" href="#shadowText" x="168" y="150"  />
+        <use id="newUse2" href="#fitbit-3D-text" x="168" y="150"  />
 
     </g>
 

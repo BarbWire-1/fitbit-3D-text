@@ -25,12 +25,14 @@ const construct = (el) => {
     const defineProp = (obj, prop, target, source = target) => {
         Object.defineProperty(obj, prop, {
             set(newValue) { target[ prop ] = newValue; },
+            //TODO add mode: debug/release for getters?
             //comment out following line to remove getters
             get() { return source[ prop ] },
         });
     };
     // FUNCTION TO DEFINE TEXTPROPERTIES
     // pass to all subElements
+    //TODO un-nest these functions?
     function passTextToAll(obj, prop) {
         const equalAll = (prop, value) => {
             el.children.forEach(sub => {

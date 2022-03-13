@@ -1,9 +1,5 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
-
-
-
-//import { inspectObject, dumpProperties } from "./devTools";
 import { startFactory } from "./widgets/construct-widgets";
 import './widgets/fitbit-3D-text';
 
@@ -12,43 +8,44 @@ import './widgets/fitbit-3D-text';
 
 //const devTools = await import('./devTools.js')
 const mode = 'debug'|'release' 
-mode = 'release'
+mode = 'debug'
 //TODO this works 'somehow',  but not, what I was actually looking for.
 // how to provide devTools for ALL file, instead of only inside function?   
-// if (mode == 'debug') {
-//         import('./devTools')
-//             .then((devTools) => {
-//                 devTools.dumpProperties('newUse', newUse, 0)
-//                 devTools.inspectObject('newUse.style', newUse.style);
-//                 console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
-//             })
-//             .catch(err => {
-//                 console.warn('Ooops, there went something wron with your import!')
-//         })
-// } else {
-//     console.warn("To use devTools functions, set <mode> to 'debug'.");
-// }
-
-//TODO also only usable inside function
-//TODO make this a module itself and import mode, send fun?
-async function loadDevTools() {
-    const { dumpProperties, inspectObject , logThroughWidget} = await import('./devTools')
-        .then((devTools) => {
-            // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
-            // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj)
-            devTools.logThroughWidget(widget)// forEach trhough array
-            console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
-        })
-        .catch(err => {
-            console.warn('Ooops, there went something wron with your import!')
-        })
-};
-
 if (mode == 'debug') {
-    loadDevTools();
+        import('./devTools')
+            .then((devTools) => {
+                // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
+                // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj) 
+                devTools.logThroughWidget(widget)// forEach trhough array
+                console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
+            })
+            .catch(err => {
+                console.warn('Ooops, there went something wrong with your import!')
+        })
 } else {
     console.warn("To use devTools functions, set <mode> to 'debug'.");
 }
+//TODO now make similar for getters in module, but...
+//TODO also only usable inside function
+//TODO make this a module itself and import mode, send fun?
+// async function loadDevTools() {
+//     const { dumpProperties, inspectObject , logThroughWidget} = await import('./devTools')
+//         .then((devTools) => {
+//             // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
+//             // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj)
+//             devTools.logThroughWidget(widget)// forEach trhough array
+//             console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
+//         })
+//         .catch(err => {
+//             console.warn('Ooops, there went something wrong with your import!')
+//         })
+// };
+// 
+// if (mode == 'debug') {
+//     loadDevTools();
+// } else {
+//     console.warn("To use devTools functions, set <mode> to 'debug'.");
+// };
 // after having run the async once, it later autoimports if function is set???
 //But then throws cannot be converted to an object??
 

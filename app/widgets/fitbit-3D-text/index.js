@@ -1,7 +1,6 @@
 "use strict"
 import { constructWidgets, startFactory } from '../construct-widgets';
-import { dumpProperties, inspectObject } from '../../devTools';
-import document from 'document'
+
 
 
 const construct = (el) => {

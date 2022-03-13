@@ -1,9 +1,30 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
-import { inspectObject, dumpProperties } from "./devTools";
+
+//import { inspectObject, dumpProperties } from "./devTools";
 import { startFactory } from "./widgets/construct-widgets";
 import './widgets/fitbit-3D-text';
 
+//const devTools = await import('./devTools.js')
+const mode = 'debug' | 'release'
+mode = 'blah'
+//TODO this works 'somehow',  but not, what I was actually looking for.
+// how to provide devTools for ALL file, instead of only inside function?   
+if (mode == 'debug') {
+        import('./devTools')
+            .then((devTools) => {
+                devTools.dumpProperties('newUse', newUse, 0)
+                devTools.inspectObject('newUse.style', newUse.style);
+                console.warn('You\'re in debug mode!')
+            })
+            .catch(err => {
+                console.warn('Ooops, there went something wron with your import!')
+        })
+} else {
+    console.warn("To use devTools functions, set <mode> to 'debug'");
+        }
+
+ 
 
 
 console.log(`6. startApp ${Date.now() - startFactory}ms from start`)
@@ -21,9 +42,6 @@ newUse2.text = 'blah'
 newUse2.style.fill = 'black'
 
 //newUse2.letterSpacing = 5;
-inspectObject('newUse2', newUse2)
-inspectObject('newUse2.light.style', newUse2.light.style)
-dumpProperties('newUse.style', newUse.style)
 let classEl1 = document.getElementById('classEl1')
 console.log(newUse2.getBBox().width)
 console.log(newUse2.main.getBBox().width)

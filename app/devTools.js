@@ -32,7 +32,7 @@ export function dumpProperties(name, obj, types) {
 };
 //call like: dumpProperties('obj', obj, boolean)
 
-export const inspectObject = (objName,obj) => {
+export function inspectObject(objName,obj) {
 //const prettyOut = e => JSON.parse(JSON.stringify(e))
     console.log(`${objName} keys: ${Object.keys(obj)}`)
     for (const prop in obj) {

@@ -6,8 +6,8 @@ import { startFactory } from "./widgets/construct-widgets";
 import './widgets/fitbit-3D-text';
 
 //const devTools = await import('./devTools.js')
-const mode = 'debug' | 'release'
-mode = 'debug'
+const mode = 'debug'|'release' 
+mode = 'release'
 //TODO this works 'somehow',  but not, what I was actually looking for.
 // how to provide devTools for ALL file, instead of only inside function?   
 if (mode == 'debug') {
@@ -15,14 +15,15 @@ if (mode == 'debug') {
             .then((devTools) => {
                 devTools.dumpProperties('newUse', newUse, 0)
                 devTools.inspectObject('newUse.style', newUse.style);
-                console.warn('You\'re in debug mode!')
+                console.warn("You\'re in debug mode. Set <mode> (line 10) to 'release' before publishing!")
             })
             .catch(err => {
                 console.warn('Ooops, there went something wron with your import!')
         })
 } else {
-    console.warn("To use devTools functions, set <mode> to 'debug'");
+    console.warn("To use devTools functions, set <mode> (line 10) to 'debug'.");
 }
+//TODO possible to do similar for getters INSIDE module's closure?
 
 //TODO this is NOT working: Unhandled exception: TypeError: Expected a function. line 10 (??)
     // (async () => {

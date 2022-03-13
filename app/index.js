@@ -77,19 +77,20 @@ console.log(newUse2.text.length)
 // console.log(newUse2.main.getBBox().x)
 
 //newUse.text='blah'
-// const logThroughWidget = (array) => {
-//     array.forEach(el => {
-//         console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
-//         console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
-//         console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
-//         console.log(`${el.id}.light.fill: ${el.light.style.fill}`)
-//         console.log(`${el.id}.light.x: ${el.light.x}`)
-//         console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
-//         console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
-//         console.log('-------------------------------')
-//     })
-// };
-//logThroughWidget(widget)
+//TODO why doesn't this work as export from devTools?
+const logThroughWidget = (array) => {
+    array.forEach(el => {
+        console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
+        console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
+        console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
+        console.log(`${el.id}.light.fill: ${el.light.style.fill}`)
+        console.log(`${el.id}.light.x: ${el.light.x}`)
+        console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
+        console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
+        console.log('-------------------------------')
+    })
+};
+logThroughWidget(widget)
 
 console.log(`7. endApp ${Date.now() - startFactory}ms from start`)
 

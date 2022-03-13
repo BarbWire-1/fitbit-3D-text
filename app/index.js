@@ -7,6 +7,8 @@ import { startFactory } from "./widgets/construct-widgets";
 import './widgets/fitbit-3D-text';
 
 // TESTING DYNAMIC MODULE IMPORT-------------------------------------------------------------------------------
+
+
 //const devTools = await import('./devTools.js')
 const mode = 'debug'|'release' 
 mode = 'debug'
@@ -17,13 +19,13 @@ if (mode == 'debug') {
             .then((devTools) => {
                 devTools.dumpProperties('newUse', newUse, 0)
                 devTools.inspectObject('newUse.style', newUse.style);
-                console.warn("You\'re in debug mode. Set <mode> (line 10) to 'release' before publishing!")
+                console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
             })
             .catch(err => {
                 console.warn('Ooops, there went something wron with your import!')
         })
 } else {
-    console.warn("To use devTools functions, set <mode> (line 10) to 'debug'.");
+    console.warn("To use devTools functions, set <mode> to 'debug'.");
 }
 
 // //TODO also only usable inside function
@@ -39,6 +41,8 @@ if (mode == 'debug') {
 // after having run the async once, it later autoimports if function is set???
 //But then throws cannot be converted to an object??
 //dumpProperties('newUse2', newUse2, 0)//TypeError: Argument cannot be converted to an object. ????
+
+
 // END TESTING DYNAMIC MODULE IMPORT-------------------------------------------------------------------------------
 
 console.log(`6. startApp ${Date.now() - startFactory}ms from start`)

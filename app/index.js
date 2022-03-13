@@ -7,7 +7,7 @@ import './widgets/fitbit-3D-text';
 
 //const devTools = await import('./devTools.js')
 const mode = 'debug' | 'release'
-mode = 'blah'
+mode = 'debug'
 //TODO this works 'somehow',  but not, what I was actually looking for.
 // how to provide devTools for ALL file, instead of only inside function?   
 if (mode == 'debug') {
@@ -22,7 +22,19 @@ if (mode == 'debug') {
         })
 } else {
     console.warn("To use devTools functions, set <mode> to 'debug'");
-        }
+}
+
+//TODO this is NOT working: Unhandled exception: TypeError: Expected a function. line 10 (??)
+    // (async () => {
+    //     if (mode == 'debug') {
+    //         try {
+    //             const { default:  devTools, dumpProperties, inspectObject } = await import('./devTools')
+    //             console.log(devTools)
+    //         } catch (err) {
+    //             console.log('you can await the await, but it will not do anything')
+    //         }
+    //     }
+    // })();
 
  
 

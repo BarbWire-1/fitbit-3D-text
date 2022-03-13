@@ -1,6 +1,7 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
-import { dumpProperties } from "./devTools";
+
+
 
 //import { inspectObject, dumpProperties } from "./devTools";
 import { startFactory } from "./widgets/construct-widgets";
@@ -11,7 +12,7 @@ import './widgets/fitbit-3D-text';
 
 //const devTools = await import('./devTools.js')
 const mode = 'debug'|'release' 
-mode = 'debug'
+mode = 'release'
 //TODO this works 'somehow',  but not, what I was actually looking for.
 // how to provide devTools for ALL file, instead of only inside function?   
 // if (mode == 'debug') {
@@ -30,10 +31,11 @@ mode = 'debug'
 
 // //TODO also only usable inside function
 async function loadDevTools() {
-    const { dumpProperties, inspectObject } = await import('./devTools')
+    const { dumpProperties, inspectObject , logThroughWidget} = await import('./devTools')
         .then((devTools) => {
-            devTools.dumpProperties('newUse', newUse, 0)
-            devTools.inspectObject('newUse.style', newUse.style);
+            // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
+            // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj)
+            devTools.logThroughWidget(widget)// forEach trhough array
             console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
         })
         .catch(err => {
@@ -48,7 +50,7 @@ if (mode == 'debug') {
 }
 // after having run the async once, it later autoimports if function is set???
 //But then throws cannot be converted to an object??
-//dumpProperties('newUse2', newUse2, 0)//TypeError: Argument cannot be converted to an object. ????
+
 
 
 // END TESTING DYNAMIC MODULE IMPORT-------------------------------------------------------------------------------
@@ -76,21 +78,22 @@ console.log(newUse2.text.length)
 // console.log(newUse2.getBBox().width)
 // console.log(newUse2.main.getBBox().x)
 
+//dumpProperties('newUse2', newUse2, 0)//TypeError: Argument cannot be converted to an object. ????
 //newUse.text='blah'
-//TODO why doesn't this work as export from devTools?
-const logThroughWidget = (array) => {
-    array.forEach(el => {
-        console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
-        console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
-        console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
-        console.log(`${el.id}.light.fill: ${el.light.style.fill}`)
-        console.log(`${el.id}.light.x: ${el.light.x}`)
-        console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
-        console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
-        console.log('-------------------------------')
-    })
-};
-logThroughWidget(widget)
+
+// const logThroughWidget = (array) => {
+//     array.forEach(el => {
+//         console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
+//         console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
+//         console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
+//         console.log(`${el.id}.light.fill: ${el.light.style.fill}`)
+//         console.log(`${el.id}.light.x: ${el.light.x}`)
+//         console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
+//         console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
+//         console.log('-------------------------------')
+//     })
+// };
+//logThroughWidget(widget)
 
 console.log(`7. endApp ${Date.now() - startFactory}ms from start`)
 

@@ -1,13 +1,15 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
+import { dumpProperties } from "./devTools";
 
 //import { inspectObject, dumpProperties } from "./devTools";
 import { startFactory } from "./widgets/construct-widgets";
 import './widgets/fitbit-3D-text';
 
+// TESTING DYNAMIC MODULE IMPORT-------------------------------------------------------------------------------
 //const devTools = await import('./devTools.js')
 const mode = 'debug'|'release' 
-mode = 'release'
+mode = 'debug'
 //TODO this works 'somehow',  but not, what I was actually looking for.
 // how to provide devTools for ALL file, instead of only inside function?   
 if (mode == 'debug') {
@@ -23,22 +25,21 @@ if (mode == 'debug') {
 } else {
     console.warn("To use devTools functions, set <mode> (line 10) to 'debug'.");
 }
-//TODO possible to do similar for getters INSIDE module's closure?
 
-//TODO this is NOT working: Unhandled exception: TypeError: Expected a function. line 10 (??)
-    // (async () => {
-    //     if (mode == 'debug') {
-    //         try {
-    //             const { default:  devTools, dumpProperties, inspectObject } = await import('./devTools')
-    //             console.log(devTools)
-    //         } catch (err) {
-    //             console.log('you can await the await, but it will not do anything')
-    //         }
-    //     }
-    // })();
-
- 
-
+// //TODO also only usable inside function
+// async function loadDevTools() {
+//     const { dumpProperties, inspectObject } = await import('./devTools');
+//     dumpProperties('newUse', newUse, 0)
+//     inspectObject('newUse.style', newUse.style)
+// }
+// if (mode == 'debug') {
+//     loadDevTools()
+//    
+// }
+// after having run the async once, it later autoimports if function is set???
+//But then throws cannot be converted to an object??
+//dumpProperties('newUse2', newUse2, 0)//TypeError: Argument cannot be converted to an object. ????
+// END TESTING DYNAMIC MODULE IMPORT-------------------------------------------------------------------------------
 
 console.log(`6. startApp ${Date.now() - startFactory}ms from start`)
 console.log('-------------------------------')
@@ -79,6 +80,7 @@ console.log(newUse2.text.length)
 //logThroughWidget(widget)
 
 console.log(`7. endApp ${Date.now() - startFactory}ms from start`)
+
 
 //TODO test all <set> 
 

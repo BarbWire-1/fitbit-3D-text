@@ -14,30 +14,38 @@ const mode = 'debug'|'release'
 mode = 'debug'
 //TODO this works 'somehow',  but not, what I was actually looking for.
 // how to provide devTools for ALL file, instead of only inside function?   
-if (mode == 'debug') {
-        import('./devTools')
-            .then((devTools) => {
-                devTools.dumpProperties('newUse', newUse, 0)
-                devTools.inspectObject('newUse.style', newUse.style);
-                console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
-            })
-            .catch(err => {
-                console.warn('Ooops, there went something wron with your import!')
+// if (mode == 'debug') {
+//         import('./devTools')
+//             .then((devTools) => {
+//                 devTools.dumpProperties('newUse', newUse, 0)
+//                 devTools.inspectObject('newUse.style', newUse.style);
+//                 console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
+//             })
+//             .catch(err => {
+//                 console.warn('Ooops, there went something wron with your import!')
+//         })
+// } else {
+//     console.warn("To use devTools functions, set <mode> to 'debug'.");
+// }
+
+// //TODO also only usable inside function
+async function loadDevTools() {
+    const { dumpProperties, inspectObject } = await import('./devTools')
+        .then((devTools) => {
+            devTools.dumpProperties('newUse', newUse, 0)
+            devTools.inspectObject('newUse.style', newUse.style);
+            console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
         })
+        .catch(err => {
+            console.warn('Ooops, there went something wron with your import!')
+        })
+};
+
+if (mode == 'debug') {
+    loadDevTools();
 } else {
     console.warn("To use devTools functions, set <mode> to 'debug'.");
 }
-
-// //TODO also only usable inside function
-// async function loadDevTools() {
-//     const { dumpProperties, inspectObject } = await import('./devTools');
-//     dumpProperties('newUse', newUse, 0)
-//     inspectObject('newUse.style', newUse.style)
-// }
-// if (mode == 'debug') {
-//     loadDevTools()
-//    
-// }
 // after having run the async once, it later autoimports if function is set???
 //But then throws cannot be converted to an object??
 //dumpProperties('newUse2', newUse2, 0)//TypeError: Argument cannot be converted to an object. ????

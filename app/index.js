@@ -29,7 +29,8 @@ mode = 'release'
 //     console.warn("To use devTools functions, set <mode> to 'debug'.");
 // }
 
-// //TODO also only usable inside function
+//TODO also only usable inside function
+//TODO make this a module itself and import mode, send fun?
 async function loadDevTools() {
     const { dumpProperties, inspectObject , logThroughWidget} = await import('./devTools')
         .then((devTools) => {

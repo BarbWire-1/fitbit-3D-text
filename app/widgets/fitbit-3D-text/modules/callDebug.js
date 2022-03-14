@@ -16,3 +16,4 @@ export const callDebug = (mode, obj) => {
         console.warn("To use devTools functions, set <mode> to 'debug'.");
     }
 }
+//Cant' callDebug twice, so how to use different functions optional/parallel?

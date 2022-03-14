@@ -29,8 +29,9 @@ console.log('-------------------------------')
 let widgetUsesGroup = document.getElementById('widgetUsesGroup')
 let widget = widgetUsesGroup.getElementsByClassName("widget-auto");
 callDebug('debug', widget)
-callDebug('debug', newUse)
+
 let newUse = widgetUsesGroup.getElementById('newUse')
+//callDebug('debug', newUse)//TODO not working this way, as can't import twice
 //newUse.shadow.x = newUse.shadow.y = 2;
 //newUse.style.fill = 'magenta'
 let newUse2 = widgetUsesGroup.getElementById('newUse2')

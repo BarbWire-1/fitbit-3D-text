@@ -45,8 +45,8 @@ export function inspectObject(objName,obj) {
     };
     console.log('----------------------------')
 };
-export function logThroughWidget(obj) {
-    obj.forEach(el => {
+export const logThroughWidget = (obj) => {
+    obj.forEach(el => { //if object .isArray()
         console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
         console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
         console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
@@ -56,6 +56,18 @@ export function logThroughWidget(obj) {
         console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
         console.log('-------------------------------')
         })
+};
+//
+export const logWidgetInstance = (el) => { 
+    console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
+    console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
+    console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
+    console.log(`${el.id}.light.fill: ${el.light.style.fill}`)
+    console.log(`${el.id}.light.x: ${el.light.x}`)
+    console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
+    console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
+    console.log('-------------------------------')
+    
 };
 //call like: inspectObject('objName',obj)
 //TODO Make recursive?

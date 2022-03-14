@@ -85,6 +85,7 @@ const construct = (el) => {
             passTextToAll(el, 'text');
             passTextToAll(el, 'textAnchor');
             passTextToAll(el, 'letterSpacing');
+            
         }
     };
   
@@ -114,11 +115,12 @@ const construct = (el) => {
 
     // CONNECT OUTER TO VIRTUAL STYLE
     // creates widget-use(instance): text-related, mainEl.fill, el.getBBox(), all useOwn
-    let widgetStyleAPI = Object.seal({
+    let widgetAPI = Object.seal({
         //we kept a reference to the real .style in _style
         style: Object.seal(new StyleWidget(_style)),
         text: Object.seal(new TextWidget()),
         set fill(newValue) { mainEl.style.fill = newValue },
+        get() {return widgetAPI}
     });
     
      // GETBBOX() ON USE (!)--------------------------------------------------------------

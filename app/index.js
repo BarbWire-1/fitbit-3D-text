@@ -17,7 +17,9 @@ import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
  * 
  * RELEASE:
  * The release version will not include getters on properties
- * or any of the debug files.
+ * or any of the debug files, so the values of widgetInstances can't be console.logged
+ * as 'undefined'
+ * 
  * import './widgets/fitbit-3D-text/release';
  * comment-out your callDebug(calls)
  */
@@ -42,7 +44,7 @@ newUse2.style.fill = 'black'
 let classEl1 = document.getElementById('classEl1')
 console.log(newUse2.getBBox().width)
 console.log(newUse2.main.getBBox().width)
-console.log(newUse2.text.length)
+//console.log(newUse2.text.length)//TODO TypeError: Cannot read property 'length' of undefined in 'release'
 
 // console.log(newUse2.getBBox().width)
 // console.log(newUse2.main.getBBox().x)

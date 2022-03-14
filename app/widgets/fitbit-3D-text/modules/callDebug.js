@@ -8,7 +8,7 @@ export const callDebug = (mode, obj) => {
                 // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
                 // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj) 
                 devTools.logThroughWidget(obj)// forEach trhough array
-                console.warn("You\'re in debug mode. Remove/comment-out callDebug import and <callDebug> calls \n                 AND change widget import to 'release' before publishing!")
+                console.warn("You\'re in debug mode. Before publishing change widget import to 'release'\n                 AND: Remove/comment-out callDebug import and <callDebug> calls!")
             })
             .catch(err => {
                 console.warn('Ooops, there went something wrong with your import!')

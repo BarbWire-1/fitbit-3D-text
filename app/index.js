@@ -11,22 +11,24 @@ import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
  * console.log:
  * import './widgets/fitbit-3D-text/debug';
  * 
- * see all(most) info of object:
+ * To see allmost all info of widget-instance or array of widget-instances:
  * import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
- * callDebug(mode, obj) mode(fix!)
+ * use function callDebug('debug', obj) 
  * 
  * RELEASE:
  * The release version will not include getters on properties
  * or any of the debug files, so the values of widgetInstances can't be console.logged
- * as 'undefined'
+ * (log as 'undefined')
  * 
  * import './widgets/fitbit-3D-text/release';
- * comment-out your callDebug(calls) 
  * 
+ * IF USED CALLDEBUG BEFORE:
+ * comment-out your callDebug(calls) 
+ * remove or comment-out callDebug import 
  */
 
 
-const mode ='debug'
+
 console.log(`6. startApp ${Date.now() - startFactory}ms from start`)
 console.log('-------------------------------')
 // single widget-uses

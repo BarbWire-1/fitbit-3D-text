@@ -14,7 +14,7 @@ export const callDebug = (mode, obj) => {
                 console.warn('Ooops, there went something wrong with your import!')
             })
     } else {
-        console.warn("To use devTools functions, set <mode> to 'debug'.");
+        console.warn("To console.log or  inspect widget-instances, set <mode> to 'debug'.");
     }
 }
 //Cant' callDebug twice, so how to use different functions optional/parallel?

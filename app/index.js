@@ -13,7 +13,7 @@ import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
  * 
  * see all(most) info of object:
  * import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
- * callDebug(mode, obj) mode = 'debug'
+ * callDebug(mode, obj) mode(fix!)
  * 
  * RELEASE:
  * The release version will not include getters on properties
@@ -21,16 +21,17 @@ import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
  * as 'undefined'
  * 
  * import './widgets/fitbit-3D-text/release';
- * comment-out your callDebug(calls)
+ * comment-out your callDebug(calls) OR
+ * set mode ='release'
  */
-
+let mode = 'debug'
 console.log(`6. startApp ${Date.now() - startFactory}ms from start`)
 console.log('-------------------------------')
 // single widget-uses
 
 let widgetUsesGroup = document.getElementById('widgetUsesGroup')
 let widget = widgetUsesGroup.getElementsByClassName("widget-auto");
-callDebug('debug', widget)
+callDebug(mode, widget)
 
 let newUse = widgetUsesGroup.getElementById('newUse')
 //callDebug('debug', newUse)//TODO not working this way, as can't import twice

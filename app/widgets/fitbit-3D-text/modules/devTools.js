@@ -45,8 +45,8 @@ export function inspectObject(objName,obj) {
     };
     console.log('----------------------------')
 };
-export function logThroughWidget(array) {
-    array.forEach(el => {
+export function logThroughWidget(obj) {
+    obj.forEach(el => {
         console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
         console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
         console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
@@ -55,7 +55,7 @@ export function logThroughWidget(array) {
         console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
         console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
         console.log('-------------------------------')
-    })
+        })
 };
 //call like: inspectObject('objName',obj)
 //TODO Make recursive?

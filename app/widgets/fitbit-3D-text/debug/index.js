@@ -1,5 +1,5 @@
 "use strict"
-import { constructWidgets, startFactory } from '../construct-widgets';
+import { constructWidgets, startFactory } from '../../construct-widgets';
 
 
 

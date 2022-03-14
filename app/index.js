@@ -1,57 +1,26 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
 import { startFactory } from "./widgets/construct-widgets";
-import './widgets/fitbit-3D-text';
+import './widgets/fitbit-3D-text/debug';// 'debug' or 'release'
+import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
 
-// TESTING DYNAMIC MODULE IMPORT-------------------------------------------------------------------------------
-
-
-//const devTools = await import('./devTools.js')
-const mode = 'debug'|'release' 
-mode = 'debug'
-//TODO this works 'somehow',  but not, what I was actually looking for.
-// how to provide devTools for ALL file, instead of only inside function?   
-if (mode == 'debug') {
-        import('./devTools')
-            .then((devTools) => {
-                // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
-                // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj) 
-                devTools.logThroughWidget(widget)// forEach trhough array
-                console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
-            })
-            .catch(err => {
-                console.warn('Ooops, there went something wrong with your import!')
-        })
-} else {
-    console.warn("To use devTools functions, set <mode> to 'debug'.");
-}
-//TODO now make similar for getters in module, but...
-//TODO also only usable inside function
-//TODO make this a module itself and import mode, send fun?
-// async function loadDevTools() {
-//     const { dumpProperties, inspectObject , logThroughWidget} = await import('./devTools')
-//         .then((devTools) => {
-//             // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
-//             // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj)
-//             devTools.logThroughWidget(widget)// forEach trhough array
-//             console.warn("You\'re in debug mode. Set <mode> to 'release' before publishing!")
-//         })
-//         .catch(err => {
-//             console.warn('Ooops, there went something wrong with your import!')
-//         })
-// };
-// 
-// if (mode == 'debug') {
-//     loadDevTools();
-// } else {
-//     console.warn("To use devTools functions, set <mode> to 'debug'.");
-// };
-// after having run the async once, it later autoimports if function is set???
-//But then throws cannot be converted to an object??
-
-
-
-// END TESTING DYNAMIC MODULE IMPORT-------------------------------------------------------------------------------
+/**
+ * DEBUG vs RELEASE
+ * DEBUG:
+ * To debug widget-instances: (development)
+ * console.log:
+ * import './widgets/fitbit-3D-text/debug';
+ * 
+ * see all(most) info of object:
+ * import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
+ * callDebug(mode, obj) mode = 'debug'
+ * 
+ * RELEASE:
+ * The release version will not include getters on properties
+ * or any of the debug files.
+ * import './widgets/fitbit-3D-text/release';
+ * comment-out your callDebug(calls)
+ */
 
 console.log(`6. startApp ${Date.now() - startFactory}ms from start`)
 console.log('-------------------------------')
@@ -59,7 +28,8 @@ console.log('-------------------------------')
 
 let widgetUsesGroup = document.getElementById('widgetUsesGroup')
 let widget = widgetUsesGroup.getElementsByClassName("widget-auto");
-
+callDebug('debug', widget)
+callDebug('debug', newUse)
 let newUse = widgetUsesGroup.getElementById('newUse')
 //newUse.shadow.x = newUse.shadow.y = 2;
 //newUse.style.fill = 'magenta'

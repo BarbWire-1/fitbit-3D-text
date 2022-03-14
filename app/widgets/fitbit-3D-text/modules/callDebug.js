@@ -2,6 +2,7 @@
 export const callDebug = (mode, obj) => {
     if (mode == 'debug') {
         //import('./widgets/fitbit-3D-text/modules/devTools')
+       // let devTools = await import('./devTools')//TODO this throws 'yield' why??
         import('./devTools')
             .then((devTools) => {
                 // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)

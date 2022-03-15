@@ -2,7 +2,7 @@
 import document from "document";
 import './widgets/fitbit-3D-text/debug';// 'debug' or 'release'
 import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
-import { inspectObject } from "./widgets/fitbit-3D-text/modules/devTools";
+
 
 /**
  * DEBUG vs RELEASE
@@ -44,7 +44,7 @@ newUse2.style.fill = 'black'
 
 //newUse2.letterSpacing = 5;
 let classEl1 = document.getElementById('classEl1')
-inspectObject('newUse2.getBBox',newUse2.getBBox())
+
 console.log(newUse2.main.getBBox().width)
 console.log(newUse2.text.length)
 

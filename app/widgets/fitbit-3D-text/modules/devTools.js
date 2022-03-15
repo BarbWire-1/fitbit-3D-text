@@ -37,10 +37,12 @@ export function inspectObject(objName,obj) {
     console.log(`${objName} keys: ${Object.keys(obj)}`)
     for (const prop in obj) {
         if (obj.hasOwnProperty(prop)) {
-            //console.log(`${prettyOut(objName)}.${prettyOut(prop)}: ${JSON.stringify(obj[ prop ])}`)
+            // console.log(`${prettyOut(objName)}.${prettyOut(prop)}: ${JSON.stringify(obj[ prop ])}`)
             console.log(`${objName}.${[ prop ]}: ${JSON.stringify(obj[ prop ])}`)
         }
-       // else { console.log(`inherit: ${objName}.${[ prop ]}`) }
+        // else {
+        //     console.log(`inherit: ${objName}.${[ prop ]}`)
+        // }
         
     };
     console.log('----------------------------')
@@ -49,13 +51,15 @@ export function inspectObject(objName,obj) {
 
 export const logThroughWidget = (obj) => {
     //TODO how to access all properties functional?
+    //inspectObject?
     const logStuff = (el) => {  
+       
         console.log(`${el.id}.text: ${el.text}`)
         console.log(`${el.id}.x: ${el.x}`)
         console.log(`${el.id}.y: ${el.y}`)
-        console.log(`${el.id}.style.fill: ${el.style.fill}`)//undefined. why? main also undefined
+        console.log(`${el.id}.style.fill: ${el.style.fill}`)
         console.log(`${el.id}.style.fontFamily: ${el.style.fontFamily}`)
-        console.log(`${el.id}.style.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
+        console.log(`${el.id}.style.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? although 30 applied
         console.log(`${el.id}.light.x: ${el.light.x}`)
         console.log(`${el.id}.light.y: ${el.light.y}`)
         console.log(`${el.id}.light.style.fill: ${el.light.style.fill}`)

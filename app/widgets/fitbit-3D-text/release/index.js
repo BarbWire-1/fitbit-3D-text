@@ -1,7 +1,5 @@
 "use strict"
-import { constructWidgets, startFactory } from '../../construct-widgets';
-
-
+import { constructWidgets } from '../../construct-widgets';
 
 const construct = (el) => {
     

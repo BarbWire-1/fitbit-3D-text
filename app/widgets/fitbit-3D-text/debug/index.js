@@ -24,14 +24,11 @@ const construct = (el) => {
     const defineProp = (obj, prop, target, source = target) => {
         Object.defineProperty(obj, prop, {
             set(newValue) { target[ prop ] = newValue; },
-            //TODO add mode: debug/release for getters?
-            //comment out following line to remove getters
             get() { return source[ prop ] },
         });
     };
     // FUNCTION TO DEFINE TEXTPROPERTIES
     // pass to all subElements
-    //TODO un-nest these functions?
     function passTextToAll(obj, prop) {
         const equalAll = (prop, value) => {
             el.children.forEach(sub => {
@@ -41,7 +38,6 @@ const construct = (el) => {
 
         Object.defineProperty(obj, prop, {
             set(newValue) { equalAll(prop, newValue) },
-            //comment out following line to remove getters
             get() { return mainEl[ prop ] },
             enumerable: true
         });
@@ -196,6 +192,7 @@ const construct = (el) => {
         // Note that text, letter-spacing and text-anchor are set on useEl using config (see above), and are not copied from mainEl.
         //defaults
         //TODO search for a nicer way to set defaults
+     
         lightEl.style.fill = lightEl.style.fill ?? "white";
         shadowEl.style.fill = shadowEl.style.fill ?? "red";
 

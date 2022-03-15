@@ -1,8 +1,8 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
-import { startFactory } from "./widgets/construct-widgets";
 import './widgets/fitbit-3D-text/debug';// 'debug' or 'release'
 import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
+import { inspectObject } from "./widgets/fitbit-3D-text/modules/devTools";
 
 /**
  * DEBUG vs RELEASE
@@ -29,8 +29,6 @@ import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
 
 
 
-console.log(`6. startApp ${Date.now() - startFactory}ms from start`)
-console.log('-------------------------------')
 // single widget-uses
 
 let widgetUsesGroup = document.getElementById('widgetUsesGroup')
@@ -46,13 +44,13 @@ newUse2.style.fill = 'black'
 
 //newUse2.letterSpacing = 5;
 let classEl1 = document.getElementById('classEl1')
-console.log(newUse2.getBBox().width)
+inspectObject('newUse2.getBBox',newUse2.getBBox())
 console.log(newUse2.main.getBBox().width)
 console.log(newUse2.text.length)
 
 
 
-console.log(`7. endApp ${Date.now() - startFactory}ms from start`)
+
 
 
 //TODO test all <set> 

@@ -45,17 +45,24 @@ export function inspectObject(objName,obj) {
     };
     console.log('----------------------------')
 };
+//call like: inspectObject('objName',obj)
+
 export const logThroughWidget = (obj) => {
-    
-    const logStuff = (el) => {          
-    console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
-    console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
-    console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
-    console.log(`${el.id}.light.fill: ${el.light.style.fill}`)
-    console.log(`${el.id}.light.x: ${el.light.x}`)
-    console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
-    console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
-    console.log('-------------------------------')
+    //TODO how to access all properties functional?
+    const logStuff = (el) => {  
+        console.log(`${el.id}.text: ${el.text}`)
+        console.log(`${el.id}.x: ${el.x}`)
+        console.log(`${el.id}.y: ${el.y}`)
+        console.log(`${el.id}.style.fill: ${el.style.fill}`)//undefined. why? main also undefined
+        console.log(`${el.id}.style.fontFamily: ${el.style.fontFamily}`)
+        console.log(`${el.id}.style.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
+        console.log(`${el.id}.light.x: ${el.light.x}`)
+        console.log(`${el.id}.light.y: ${el.light.y}`)
+        console.log(`${el.id}.light.style.fill: ${el.light.style.fill}`)
+        console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
+        console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
+        console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
+        console.log('-------------------------------')
     }
     if (obj.length > 1) {
         obj.forEach(el => { //if object .isArray()
@@ -65,18 +72,7 @@ export const logThroughWidget = (obj) => {
         logStuff(obj)
     }
 };
-//
-// export const logWidgetInstance = (el) => { 
-//     console.log(`${el.id}.fill: ${el.style.fill}`)//undefined. why? main also undefined
-//     console.log(`${el.id}.fontFamily: ${el.style.fontFamily}`)
-//     console.log(`${el.id}.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? (set to 30 in css) applies correct
-//     console.log(`${el.id}.light.fill: ${el.light.style.fill}`)
-//     console.log(`${el.id}.light.x: ${el.light.x}`)
-//     console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
-//     console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
-//     console.log('-------------------------------')
-//     
-// };
+
 //call like: inspectObject('objName',obj)
 //TODO Make recursive?
 //TODO how to reach main.getBBOX() values here? - working for el.getBBOX as separately defined?

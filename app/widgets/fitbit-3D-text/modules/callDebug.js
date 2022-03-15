@@ -8,7 +8,7 @@ export const callDebug = (mode, obj) => {
                 // devTools.dumpProperties('newUse', newUse, 0;)//('objName', obj, boolean)
                 // devTools.inspectObject('newUse.style', newUse.style);//('objName', obj) 
                 devTools.logThroughWidget(obj)// forEach trhough array
-                console.warn("You\'re in debug mode. Before publishing change widget import to 'release'\n                 AND: Remove/comment-out callDebug import and <callDebug> calls!")
+                console.warn("You\'re in debug mode. Before publishing, change widget import to 'release'\n                 AND: Remove/comment-out callDebug import and <callDebug> calls if used to debug!")
             })
             .catch(err => {
                 console.warn('Ooops, there went something wrong with your import!')
@@ -17,4 +17,4 @@ export const callDebug = (mode, obj) => {
         console.warn("To console.log or  inspect widget-instances, set <mode> to 'debug'.");
     }
 }
-//Cant' callDebug twice, so how to use different functions optional/parallel?
+//TODO Cant' callDebug twice, so how to use different functions optional/parallel?

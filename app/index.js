@@ -1,7 +1,8 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
-import './widgets/fitbit-3D-text/debug';// 'debug' or 'release'
+import './widgets/fitbit-3D-text/release';// 'debug' or 'release'
 import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
+import { inspectObject } from "./widgets/fitbit-3D-text/modules/devTools";
 
 
 /**
@@ -33,7 +34,7 @@ import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
 
 let widgetUsesGroup = document.getElementById('widgetUsesGroup')
 let widget = widgetUsesGroup.getElementsByClassName("widget-auto");
-callDebug('debug', widget)//array 
+// callDebug('debug', widget)//array 
 
 let newUse = widgetUsesGroup.getElementById('newUse')
 callDebug('debug', newUse)//single widget-instance
@@ -45,8 +46,9 @@ newUse2.style.fill = 'black'
 //newUse2.letterSpacing = 5;
 let classEl1 = document.getElementById('classEl1')
 
-console.log(newUse2.main.getBBox().width)
-console.log(newUse2.text.length)
+inspectObject('newUse2.getBBox()',newUse2.getBBox())
+// console.log(newUse2.text.length)
+// console.log(newUse2.main.text.length)
 
 
 

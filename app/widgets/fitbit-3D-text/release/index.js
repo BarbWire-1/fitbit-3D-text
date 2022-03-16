@@ -78,14 +78,19 @@ const construct = (el) => {
     
     // TEXT ON USE
     // and pass to all subElements
-    class TextWidget  {
+    class TextWidget {
         constructor() {
             passTextToAll(el, 'text');
-            passTextToAll(el, 'textAnchor');
-            passTextToAll(el, 'letterSpacing');
-            
+
+            //passTextToAll(el, 'textAnchor');
+            //passTextToAll(el, 'letterSpacing');
+            // Object.defineProperty(el, 'text', {
+            // get() { return this.text }
+            // })
         }
     };
+    //TODO how to get text.length in release mode? logs: can't get length of undefined
+    //TODO why letterSpacing/textAnchor not needed???
   
     // CREATE API's-------------------------------------------------------------------
     // FUNCTION TO EXPOSE TO CORRESPONDING OBJECT

@@ -85,10 +85,15 @@ const construct = (el) => {
     class TextWidget  {
         constructor() {
             passTextToAll(el, 'text');
-            passTextToAll(el, 'textAnchor');
-            passTextToAll(el, 'letterSpacing');
+           
+            //passTextToAll(el, 'textAnchor');
+            //passTextToAll(el, 'letterSpacing');
+            // Object.defineProperty(el, 'text', {
+            // get() { return this.text }
+            // })
         }
     };
+    //TODO why letterSpacing/textAnchor not needed???
   
     // CREATE API's-------------------------------------------------------------------
     // FUNCTION TO EXPOSE TO CORRESPONDING OBJECT
@@ -178,7 +183,7 @@ const construct = (el) => {
             switch (attributeName) {
                 case 'text':
                     el.text = attributeValue   // this won't like embedded semi-colons, and quotes will require care
-                    break;
+                   break;
                 case 'letter-spacing':
                     el.letterSpacing = Number(attributeValue);
                     break;

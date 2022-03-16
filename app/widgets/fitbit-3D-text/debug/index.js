@@ -131,7 +131,7 @@ const construct = (el) => {
         style: Object.seal(new StyleWidget(_style)),
         text: Object.seal(new TextWidget()),
         set fill(newValue) { mainEl.style.fill = newValue },
-        get() { return widgetStyleAPI; },
+        //get() { return widgetStyleAPI; },//seems not to be needed
         enumerable: true,
     });
     

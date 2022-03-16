@@ -36,6 +36,10 @@ const construct = (el) => {
 
         Object.defineProperty(obj, prop, {
             set(newValue) { equalAll(prop, newValue) },
+            //added getter here to be able to use text.length
+            get() { return mainEl[ prop ] },
+            // enumerable: true
+            
         });
     };
     
@@ -84,9 +88,7 @@ const construct = (el) => {
 
             //passTextToAll(el, 'textAnchor');
             //passTextToAll(el, 'letterSpacing');
-            // Object.defineProperty(el, 'text', {
-            // get() { return this.text }
-            // })
+           
         }
     };
     //TODO how to get text.length in release mode? logs: can't get length of undefined
@@ -123,7 +125,8 @@ const construct = (el) => {
         style: Object.seal(new StyleWidget(_style)),
         text: Object.seal(new TextWidget()),
         set fill(newValue) { mainEl.style.fill = newValue },
-        get() {return widgetAPI}
+        //leave this in? seems not to be needed
+        //get() {return widgetAPI}
     });
     
      // GETBBOX() ON USE (!)--------------------------------------------------------------

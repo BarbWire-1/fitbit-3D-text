@@ -38,6 +38,7 @@ const construct = (el) => {
 
         Object.defineProperty(obj, prop, {
             set(newValue) { equalAll(prop, newValue) },
+            //added getter here to be able to use text.length
             get() { return mainEl[ prop ] },
             enumerable: true
         });

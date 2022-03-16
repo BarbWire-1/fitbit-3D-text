@@ -1,6 +1,6 @@
 // this widget gets integrated by the widget-factory written by Gondwanasoft:  https://github.com/gondwanasoft/fitbit-simple-widget
 import document from "document";
-import './widgets/fitbit-3D-text/debug';// 'debug' or 'release'
+import './widgets/fitbit-3D-text/release';// 'debug' or 'release'
 import { callDebug } from "./widgets/fitbit-3D-text/modules/callDebug";
 import { inspectObject } from "./widgets/fitbit-3D-text/modules/devTools";
 

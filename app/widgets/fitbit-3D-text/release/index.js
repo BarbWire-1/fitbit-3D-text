@@ -38,7 +38,7 @@ const construct = (el) => {
             set(newValue) { equalAll(prop, newValue) },
             //added getter here to be able to use text.length
             get() { return mainEl[ prop ] },
-            // enumerable: true
+            enumerable: true
             
         });
     };

@@ -1,5 +1,5 @@
 # fitbit-3D-text
-Widget for 3D effects on textElements for fitbit OS\
+Widget for 3D effects on textElements for fitbit OS
 ## WORK IN PROGRESS...
 info to installation and usage will follow soon...
 

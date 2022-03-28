@@ -1,11 +1,11 @@
-# shadow-text
+# fitbit-3D-text
 Widget for 3D effects on textElements for fitbit OS\
-(instruction and usage doco will follow soon...)
+## WORK IN PROGRESS...
+info to installation and usage will follow soon...
 
 !<div align="center">![image](screenshot.png)</div>
 
-## WORK IN PROGRESS...
-info to installation and usage will follow soon...
+
 
 
 

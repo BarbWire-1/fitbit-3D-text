@@ -1,3 +1,8 @@
 {
-    "extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json"
+    "extends": "../node_modules/@fitbit/sdk/sdk-tsconfig.json",
+    "compilerOptions": {
+        "noEmit": true,
+        "checkJs": false
+    }
 }
+    

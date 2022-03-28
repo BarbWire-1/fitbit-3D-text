@@ -53,19 +53,22 @@ export const logThroughWidget = (obj) => {
     //TODO how to access all properties functional?
     //inspectObject?
     const logStuff = (el) => {  
-       
-        console.log(`${el.id}.text: ${el.text}`)
-        console.log(`${el.id}.x: ${el.x}`)
-        console.log(`${el.id}.y: ${el.y}`)
-        console.log(`${el.id}.style.fill: ${el.style.fill}`)
-        console.log(`${el.id}.style.fontFamily: ${el.style.fontFamily}`)
-        console.log(`${el.id}.style.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? although 30 applied
-        console.log(`${el.id}.light.x: ${el.light.x}`)
-        console.log(`${el.id}.light.y: ${el.light.y}`)
-        console.log(`${el.id}.light.style.fill: ${el.light.style.fill}`)
-        console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
-        console.log(`${el.id}.shadow.x: ${el.shadow.x}`)
-        console.log(`${el.id}.shadow.fill: ${el.shadow.style.fill}`)
+        console.log(`ATTRIBUTES OF ELEMENT ${el.id}`)
+        console.log('-------------------------------')
+        console.log(`text: ${el.text}`)
+        console.log(`x: ${el.x}`)
+        console.log(`y: ${el.y}`)
+        console.log(`style.fill: ${el.style.fill}`)
+        console.log(`style.fontFamily: ${el.style.fontFamily}`)
+        console.log(`style.fontSize: ${el.style.fontSize}`)//new.fontSize: -32768  ??? although 30 applied
+        console.log(`style.opacity: ${el.style.opacity}`)
+        console.log(`style.display: ${el.style.display}`)
+        console.log(`light.x: ${el.light.x}`)
+        console.log(`light.y: ${el.light.y}`)
+        console.log(`light.style.fill: ${el.light.style.fill}`)
+        console.log(`shadow.x: ${el.shadow.x}`)
+        console.log(`shadow.y: ${el.shadow.y}`)
+        console.log(`shadow.fill: ${el.shadow.style.fill}`)
         console.log('-------------------------------')
     }
     if (obj.length > 1) {

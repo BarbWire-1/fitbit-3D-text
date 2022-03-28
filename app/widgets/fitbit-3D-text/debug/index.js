@@ -86,15 +86,12 @@ const construct = (el) => {
     class TextWidget  {
         constructor() {
             passTextToAll(el, 'text');
-           
-            //passTextToAll(el, 'textAnchor');
-            //passTextToAll(el, 'letterSpacing');
-            // Object.defineProperty(el, 'text', {
-            // get() { return this.text }
-            // })
+            passTextToAll(el, 'textAnchor');
+            passTextToAll(el, 'letterSpacing');
+        
         }
     };
-    //TODO why letterSpacing/textAnchor not needed???
+
   
     // CREATE API's-------------------------------------------------------------------
     // FUNCTION TO EXPOSE TO CORRESPONDING OBJECT
